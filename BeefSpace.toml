@@ -1,0 +1,5 @@
+FileVersion = 1
+Projects = {Shaderc = {Path = "."}, Example = {Path = "example"}}
+
+[Workspace]
+StartupProject = "Example"

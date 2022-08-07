@@ -1,0 +1,6 @@
+FileVersion = 1
+Dependencies = {corlib = "*", Shaderc = "*"}
+
+[Project]
+Name = "Example"
+StartupObject = "Example.Program"

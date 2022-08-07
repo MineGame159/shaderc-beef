@@ -1,0 +1,22 @@
+FileVersion = 1
+
+[Project]
+Name = "Shaderc"
+TargetType = "BeefLib"
+StartupObject = "Shaderc.Program"
+
+[Configs.Debug.Win64]
+LibPaths = ["$(ProjectDir)/dist/windows/shaderc_shared.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/windows/*.dll\")"]
+
+[Configs.Release.Win64]
+LibPaths = ["$(ProjectDir)/dist/windows/shaderc_shared.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/windows/*.dll\")"]
+
+[Configs.Paranoid.Win64]
+LibPaths = ["$(ProjectDir)/dist/windows/shaderc_shared.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/windows/*.dll\")"]
+
+[Configs.Test.Win64]
+LibPaths = ["$(ProjectDir)/dist/windows/shaderc_shared.lib"]
+PostBuildCmds = ["CopyToDependents(\"$(ProjectDir)/dist/windows/*.dll\")"]
