@@ -1,6 +1,6 @@
 # Shaderc-Beef
 **shaderc-beef** is a Beef wrapper library for [**Shaderc**](https://github.com/google/shaderc).  
-You can find an example [here](https://github.com/MineGame15/shaderc-beef/tree/master/example/src/Program.bf).  
+You can find an example [here](https://github.com/MineGame159/shaderc-beef/blob/master/example/src/Program.bf).  
 
 Currently the bindings only contain Windows binaries.  
 
