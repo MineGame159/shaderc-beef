@@ -414,10 +414,10 @@ namespace Shaderc {
 
 						if (File.Exists(path)) {
 							String content = scope .();
-							if (File.ReadAllText(path, content) == .Ok) return new .(path, content);
+							if (File.ReadAllText(path, content) == .Ok) return IncludeResult.New(path, content);
 						}
 
-						return new .("", "");
+						return IncludeResult.New("", "");
 					},
 					new (userData, includeResult) => {
 						includeResult.Dispose();
@@ -592,6 +592,8 @@ namespace Shaderc {
 
 			public void* userData;
 
+			private Self* self = null;
+
 			public this(StringView sourceName, StringView content, void* userData = null) {
 				this.sourceName = new .[sourceName.Length]*;
 				this.sourceNameLength = (.) sourceName.Length;
@@ -604,11 +606,17 @@ namespace Shaderc {
 				this.userData = userData;
 			}
 
-			public void Dispose() mut {
+			public static Self* New(StringView sourceName, StringView content) {
+				Self* result = new .(sourceName, content);
+				result.self = result;
+				return result;
+			}
+
+			public void Dispose() {
 				delete sourceName;
 				delete content;
 
-				delete &this;
+				delete self;
 			}
 		}
 
